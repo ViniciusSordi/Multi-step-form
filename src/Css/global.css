@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+  --color1: hsl(213, 96%, 18%);
+  --color2: hsl(243, 100%, 62%);
+  --color3: hsl(228, 100%, 84%);
+  --color4: hsl(206, 94%, 87%);
+  --color5: hsl(354, 84%, 57%);
+
+  --colorn1: hsl(231, 11%, 63%);
+  --colorn2: hsl(229, 24%, 87%);
+  --colorn3: hsl(217, 100%, 97%);
+  --colorn4: hsl(231, 100%, 99%);
+  --colorn5: hsl(0, 0%, 100%);
+}
+
+main {
+  background-color: var(--colorn3);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+}
+
+.main-container {
+  background-color: var(--colorn5);
+  display: grid;
+  grid-template-columns: 274px minmax(420px, 726px);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+  min-height: 608px;
+}
+
+@media (max-width: 940px) {
+  .main-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 820px) {
+  main {
+    align-items: start;
+  }
+  .main-container {
+    background-color: var(--colorn3);
+    grid-template-columns: 1fr;
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+  }
+}

@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SideBar from "./Components/SideBar";
+import PageOne from "./Pages/PageOne";
+import PageTwo from "./Pages/PageTwo";
+import PageThree from "./Pages/PageThree";
+import PageFour from "./Pages/PageFour";
+import PageFive from "./Pages/PageFive";
+import { useSelector } from "react-redux";
+import "./Css/global.css";
 
-function App() {
+const App = () => {
+  const page = useSelector((state) => {
+    return state.page;
+  });
+
+  const pages = [
+    <PageOne />,
+    <PageTwo />,
+    <PageThree />,
+    <PageFour />,
+    <PageFive />,
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <div className="main-container">
+        <SideBar />
+        {pages[page - 1]}
+      </div>
+    </main>
   );
-}
+};
 
 export default App;
